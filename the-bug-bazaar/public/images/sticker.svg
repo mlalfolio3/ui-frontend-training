@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="160 20 320 320">
+  <rect x="160" y="20" width="320" height="320" fill="#f6efe4"/>
+  <rect x="180" y="70" width="280" height="220" rx="24" fill="#fffaf4" stroke="#241c16" stroke-width="8"/>
+  <path d="M390 70l70 70h-70z" fill="#c4491d"/>
+  <text x="220" y="190" font-size="42" font-family="Georgia" fill="#241c16">;</text>
+  <text x="270" y="210" font-size="42" font-family="Georgia" fill="#c4491d">ship it</text>
+</svg>
