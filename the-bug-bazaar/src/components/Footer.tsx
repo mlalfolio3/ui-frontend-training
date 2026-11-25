@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { publicUrl } from '../publicUrl.ts'
 import { WindowWidth } from './WindowWidth.tsx'
 
 export function Footer() {
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-brand">
         <Link className="footer-logo" to="/" aria-label="The Bug Bazaar">
-          <img src="/images/logo-color.png" alt="" />
+          <img src={publicUrl('/images/logo-color.png')} alt="" />
         </Link>
         <p className="footer-tagline">Developer gear, rubber ducks, and late-night coffee.</p>
       </div>

@@ -84,7 +84,8 @@ export function useStockFeed(onTick: (tick: StockTick) => void): {
       socket?.close()
     }
 
-    connect('start')
+    if (import.meta.env.VITE_PUBLIC_DEMO === 'true') startPolling()
+    else connect('start')
 
     return () => {
       stopped = true

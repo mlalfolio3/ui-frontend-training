@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { publicUrl } from '../publicUrl.ts'
 
 type ProductImageProps = {
   src: string
@@ -16,5 +17,5 @@ export function ProductImage({ src, alt }: ProductImageProps) {
     )
   }
 
-  return <img src={src} alt={alt} onError={() => setFailed(true)} />
+  return <img src={publicUrl(src)} alt={alt} onError={() => setFailed(true)} />
 }

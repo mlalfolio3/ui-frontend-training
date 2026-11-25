@@ -50,7 +50,29 @@ export function ExportPanel() {
       {!job ? <p>No export yet. Start one to see pending, then ready, failed, or expired.</p> : null}
       {job?.status === 'pending' ? <p>Preparing your export…</p> : null}
       {job?.status === 'ready' && job.downloadUrl ? (
-        <p><a href={job.downloadUrl}>Download export</a></p>
+        <p>
+          <a
+            href={job.downloadUrl}
+            onClick={(event) => {
+              event.preventDefault()
+              const url = job.downloadUrl
+              if (!url) return
+              void fetch(url)
+                .then((response) => response.blob())
+                .then((blob) => {
+                  const objectUrl = URL.createObjectURL(blob)
+                  const anchor = document.createElement('a')
+                  anchor.href = objectUrl
+                  anchor.download = 'customers.csv'
+                  anchor.click()
+                  URL.revokeObjectURL(objectUrl)
+                })
+                .catch(() => setError('The export file could not be downloaded.'))
+            }}
+          >
+            Download export
+          </a>
+        </p>
       ) : null}
       {job?.status === 'failed' ? (
         <p>

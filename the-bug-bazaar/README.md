@@ -11,6 +11,14 @@ npm run dev
 
 Open http://localhost:5173. A teammate only needs Node.js 20 and these two commands. Copy `.env.example` to `.env` if you want to change the mock delay. The app runs with the defaults if you skip that file.
 
+## Live demo
+
+Pushing `the-bug-bazaar` or `main` publishes the shop to GitHub Pages, the same way a static demo is hosted. The Pages build runs the mock API in the browser and uses hash routes, so refresh keeps the current page.
+
+https://mlalfolio3.github.io/ui-frontend-training/
+
+In the repository settings, Pages must use GitHub Actions as the source. The workflow is `.github/workflows/deploy-bug-bazaar.yaml`.
+
 ## Scripts
 
 | Script | What it does |

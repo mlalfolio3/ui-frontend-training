@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { publicUrl } from '../publicUrl.ts'
 import { useAppSelector } from '../store/hooks.ts'
 import { selectCartCount } from '../store/selectors.ts'
 
@@ -83,7 +84,7 @@ export function Header() {
         ) : null}
         </div>
         <Link className="logo" to="/" aria-label="The Bug Bazaar">
-          <img src="/images/logo.png" alt="" />
+          <img src={publicUrl('/images/logo.png')} alt="" />
         </Link>
       </div>
       <nav className="primary-nav" aria-label="Primary">

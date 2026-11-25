@@ -89,6 +89,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const baseDelay = Number(env.API_DELAY_MS || 200)
   return {
+    base: mode === 'pages' ? '/ui-frontend-training/' : '/',
     plugins: [
       react(),
       {
